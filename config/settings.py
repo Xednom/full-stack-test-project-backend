@@ -301,3 +301,8 @@ ALLOWED_HOSTS = [
     ".vercel.app",
     ".railway.app"
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://full-stack-test-project-frontend.vercel.app",
+    "https://full-stack-test-project-backend.up.railway.app",
+]
