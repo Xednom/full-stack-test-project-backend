@@ -1,0 +1,1 @@
+web: export DJANGO_SETTINGS_MODULE=config.settings && python manage.py migrate && python manage.py collectstatic --no-input
