@@ -184,6 +184,8 @@ SOCIALACCOUNT_PROVIDERS = {
             "access_type": "online",
         },
         "OAUTH_PKCE_ENABLED": True,
+        "VERIFIED_EMAIL": True,
+        "VERSION": "v2",
     }
 }
 
@@ -207,8 +209,8 @@ REST_AUTH = {
     "REGISTER_SERIALIZER": "dj_rest_auth.registration.serializers.RegisterSerializer",
     "SIGNUP_FIELDS": {
         "username": {"required": True},  # or False if you don't use usernames
-        "email": {"required": True},     # or False depending on your use case
-    }
+        "email": {"required": True},  # or False depending on your use case
+    },
 }
 
 # Social account settings for API usage
@@ -245,14 +247,40 @@ LOGGING = {
     },
 }
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False  # Set to False for production security
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://full-stack-test-project-frontend.vercel.app",
 ]
+
+# Additional CORS headers for Google OAuth
+CORS_ALLOWED_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
 FRONTEND_DOMAIN = "localhost:5173"
 
-ALLOWED_HOSTS = ['full-stack-test-project-backend.up.railway.app']
+ALLOWED_HOSTS = [
+    "full-stack-test-project-backend.up.railway.app",
+]
