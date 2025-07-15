@@ -186,6 +186,7 @@ SOCIALACCOUNT_PROVIDERS = {
         "OAUTH_PKCE_ENABLED": True,
         "VERIFIED_EMAIL": True,
         "VERSION": "v2",
+        "FETCH_USERINFO": True,
     }
 }
 
@@ -253,6 +254,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:5173",
+    "http://localhost:5175",
     "http://127.0.0.1:5173",
     "https://full-stack-test-project-frontend.vercel.app",
 ]
@@ -268,6 +270,8 @@ CORS_ALLOWED_HEADERS = [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
+    "access-control-allow-origin",
+    "access-control-allow-credentials",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -279,8 +283,17 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 
-FRONTEND_DOMAIN = "localhost:5173"
+# Expose headers for Google OAuth
+CORS_EXPOSE_HEADERS = [
+    "access-control-allow-origin",
+    "access-control-allow-credentials",
+]
+
+FRONTEND_DOMAIN = "localhost:5175"
 
 ALLOWED_HOSTS = [
     "full-stack-test-project-backend.up.railway.app",
+    "localhost",
+    "127.0.0.1",
+    ".vercel.app",  # Allow all Vercel subdomains
 ]
