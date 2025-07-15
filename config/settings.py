@@ -278,8 +278,6 @@ CORS_ALLOWED_HEADERS = [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
-    "access-control-allow-origin",
-    "access-control-allow-credentials",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -292,10 +290,10 @@ CORS_ALLOW_METHODS = [
 ]
 
 # Expose headers for Google OAuth
-CORS_EXPOSE_HEADERS = [
-    "access-control-allow-origin",
-    "access-control-allow-credentials",
-]
+# CORS_EXPOSE_HEADERS = [
+#     "access-control-allow-origin",
+#     "access-control-allow-credentials",
+# ]
 
 FRONTEND_DOMAIN = "localhost:5175"
 
