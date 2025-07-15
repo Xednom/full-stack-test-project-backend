@@ -205,6 +205,10 @@ REST_AUTH = {
     "SESSION_LOGIN": False,
     "TOKEN_MODEL": "rest_framework.authtoken.models.Token",
     "REGISTER_SERIALIZER": "dj_rest_auth.registration.serializers.RegisterSerializer",
+    "SIGNUP_FIELDS": {
+        "username": {"required": True},  # or False if you don't use usernames
+        "email": {"required": True},     # or False depending on your use case
+    }
 }
 
 # Social account settings for API usage
@@ -251,3 +255,4 @@ CORS_ALLOWED_ORIGINS = [
 ]
 FRONTEND_DOMAIN = "localhost:5173"
 
+ALLOWED_HOSTS = ['full-stack-test-project-backend.up.railway.app']
