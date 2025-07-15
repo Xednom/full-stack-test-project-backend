@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "full-stack-test-project"
+version = "0.1.0"
+description = ""
+authors = ["Xednom <monde.lacanlalay@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "5.2"
+djangorestframework = "3.16"
+markdown = "<3.5"
+django-filter = "1.0.1"
+dj-rest-auth = "^7.0.1"
+django-allauth = {extras = ["socialaccount"], version = "^65.10.0"}
+dj-database-url = "^3.0.1"
+django-environ = "^0.12.0"
+psycopg = {extras = ["binary", "pool"], version = "^3.2.9"}
+django-cors-headers = "^4.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
